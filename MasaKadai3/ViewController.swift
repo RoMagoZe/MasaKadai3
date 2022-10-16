@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet private weak var rightSwitch: UISwitch!
     @IBOutlet private weak var leftNumberLabel: UILabel!
     @IBOutlet private weak var rightNumberLabel: UILabel!
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet private weak var resultLabel: UILabel!
 
     @IBAction private func resultButton(_ sender: Any) {
         var leftNumber = Int(leftNumberTextField.text ?? "") ?? 0
