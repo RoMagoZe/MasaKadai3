@@ -17,24 +17,26 @@ class ViewController: UIViewController {
     @IBOutlet private weak var resultLabel: UILabel!
 
     @IBAction private func resultButton(_ sender: Any) {
-        var leftNumber = Int(leftNumberTextField.text ?? "") ?? 0
-        var rightNumber = Int(rightNumberTextField.text ?? "") ?? 0
+        let leftNumber = Int(leftNumberTextField.text ?? "") ?? 0
+        let rightNumber = Int(rightNumberTextField.text ?? "") ?? 0
 
+        let leftSignedNumber: Int
         if leftSwitch.isOn == true {
-            leftNumberLabel.text = "-" + String(leftNumber)
-            leftNumber *= -1
+            leftSignedNumber = -leftNumber
         } else {
-            leftNumberLabel.text = String(leftNumber)
+            leftSignedNumber = leftNumber
         }
 
+        let rightSignedNumber: Int
         if rightSwitch.isOn == true {
-            rightNumberLabel.text = "-" + String(rightNumber)
-            rightNumber *= -1
+            rightSignedNumber = -rightNumber
         } else {
-            rightNumberLabel.text = String(rightNumber)
+            rightSignedNumber = rightNumber
         }
 
-        resultLabel.text = String(leftNumber + rightNumber)
+        leftNumberLabel.text = String(leftSignedNumber)
+        rightNumberLabel.text = String(rightSignedNumber)
+        resultLabel.text = String(leftSignedNumber + rightSignedNumber)
     }
 
 }
